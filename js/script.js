@@ -22,7 +22,7 @@ const getWeather = () => {
       const hum = res.data.main.humidity;
       const status = Object.assign({}, ...res.data.weather);
 
-        warning.textContent = '';
+      warning.textContent = '';
 
       cityName.textContent = res.data.name;
       temperature.textContent = `${Math.floor(temp)}℃`;
@@ -31,7 +31,7 @@ const getWeather = () => {
 
       if (status.id >= 200 && status.id < 300) {
         photo.setAttribute('src', './img/thunderstorm.png');
-      } else if (status.is >= 300 && status.id < 400) {
+      } else if (status.id >= 300 && status.id < 400) {
         photo.setAttribute('src', './img/drizzle.png');
       } else if (status.id >= 500 && status.id < 600) {
         photo.setAttribute('src', './img/rain.png');
